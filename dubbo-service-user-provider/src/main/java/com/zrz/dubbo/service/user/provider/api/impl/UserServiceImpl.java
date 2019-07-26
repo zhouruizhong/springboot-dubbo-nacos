@@ -10,8 +10,19 @@ public class UserServiceImpl implements UserService {
     @Value("${dubbo.protocol.port}")
     private String port;
 
+    /**
+     * The default value of ${dubbo.application.name} is ${spring.application.name}
+     */
+    @Value("${dubbo.application.name}")
+    private String serviceName;
+
     @Override
     public String sayHi() {
         return "Hello Dubbo , i am from port:" + port;
+    }
+
+    @Override
+    public String sayHello(String name) {
+        return String.format("[%s] : Hello, %s", serviceName, name);
     }
 }

@@ -55,3 +55,5 @@ management:
         defaults: memory
         ## StatusChecker Name extras (default : empty )
         extras: load,threadpool
+server:
+  port: 8081

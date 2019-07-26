@@ -15,4 +15,9 @@ public class UserController {
     public String sayHi() {
         return userService.sayHi();
     }
+
+    @RequestMapping(value = "hello")
+    public String sayHello(String name) {
+        return userService.sayHello(name);
+    }
 }
